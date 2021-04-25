@@ -6,7 +6,7 @@ public class App {
 
     Cli cli = new Cli();
     cli.read();
-    System.out.println("Hello, " + cli.get());
+    System.out.println("Hello,  " + cli.get());
   }
 }
 
