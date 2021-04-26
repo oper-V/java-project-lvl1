@@ -11,7 +11,7 @@ public class Cli {
     Scanner sc = new Scanner(System.in);
     System.out.print("May I have your name? ");
     name = sc.nextLine();
-    sc.close();
+    //sc.close();
 
     }
 
