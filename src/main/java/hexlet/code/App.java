@@ -3,7 +3,9 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class App {
-  public static String playerName;
+
+
+  private static String playerName;
   public static void main(String[] args) {
 
     int i;
@@ -33,6 +35,10 @@ public class App {
     }
 
 
+  }
+
+  public static java.lang.String getPlayerName() {
+    return playerName;
   }
 
   private static void greet() {
