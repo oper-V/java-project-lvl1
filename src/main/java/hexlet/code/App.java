@@ -4,51 +4,19 @@ import java.util.Scanner;
 
 public class App {
 
-
-  private static String playerName;
   public static void main(String[] args) {
 
-    int i;
+    //int i;
+    String choice;
     Scanner read = new Scanner(System.in);
 
     System.out.println("Please enter the game number and press Enter.");
-    System.out.print(" 1 - Greet \n 2 - Even \n 0 - Exit \n Your choice: ");
-    i = read.nextInt();
-    read.hasNextLine();
-    //read.close();
-
-    switch (i) {
-      case 0:
-        System.out.println("Exit");
-        break;
-      case 1:
-        greet();
-        break;
-      case 2:
-        //System.out.println("Even");
-        greet();
-        Even.start();
-
-      default:
-        break;
-
-    }
-
+    System.out.print(" 1 - Greet \n 2 - Even \n 3 - Calc \n 0 - Exit \n Your choice: ");
+    //i = read.nextInt();
+    //Engine.runGames(i);
+    choice = read.nextLine();
+    Engine.runGames(choice);
 
   }
-
-  public static java.lang.String getPlayerName() {
-    return playerName;
-  }
-
-  private static void greet() {
-    System.out.println("Welcome to the Brain Games!");
-    Cli cli = new Cli();
-    cli.read();
-    playerName = cli.get();
-    System.out.println("Hello,  " + cli.get());
-  }
-
-
 }
 
