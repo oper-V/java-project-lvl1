@@ -3,21 +3,22 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Calc {
+public final class Calc implements  Games<Integer> {
 
-    private static int countCorrectAnswer;
-    private static boolean isCorrectAnswer;
-    private static final int MAX_NUMBER = 100;
+
+    private  int countCorrectAnswer;
+    private  boolean isCorrectAnswer;
+    private static final int MAX_NUMBER = 20;
     private static final int MAX_NUMBER_OPERATOR = 3;
-    private static int answer;
-    private static int correctAnswer;
+    private  int answer;
+    private  int correctAnswer;
 
-    private static int firstOperand;
-    private static int secondOperand;
-    private static char[] operators = {'+', '-', '*'};
-    private static char operator;
+    private  int firstOperand;
+    private  int secondOperand;
+    private  char[] operators = {'+', '-', '*'};
+    private  char operator;
 
-    public static void start() {
+    public  void start() {
         printRules();
         getQuestion();
         setAnswer();
@@ -26,11 +27,11 @@ public class Calc {
     }
 
 
-    private static void printRules() {
+    private  void printRules() {
         System.out.println("What is the result of the expression?");
     }
 
-    private static void getQuestion() {
+    private  void getQuestion() {
         Random rn = new Random();
         firstOperand = rn.nextInt(MAX_NUMBER);
         secondOperand = rn.nextInt(MAX_NUMBER);
@@ -39,12 +40,12 @@ public class Calc {
         System.out.print("Your answer: ");
     }
 
-    private static void setAnswer() {
+    private  void setAnswer() {
         Scanner scanner = new Scanner(System.in);
         answer = scanner.nextInt();
     }
 
-    private static void check(int x, int y, char operation, int inputAnswer) {
+    private  void check(int x, int y, char operation, int inputAnswer) {
         if (solution(x, y, operation) == inputAnswer) {
             isCorrectAnswer = true;
             countCorrectAnswer++;
@@ -56,7 +57,7 @@ public class Calc {
 
 
 
-    private static int solution(int x, int y, char operation) {
+    private  int solution(int x, int y, char operation) {
         int result = 0;
         switch (operation) {
             case '*':
@@ -74,21 +75,23 @@ public class Calc {
         return result;
     }
 
-    public static int getCorrectAnswer() {
+
+    public Integer getCorrectAnswer() {
         return correctAnswer;
     }
 
-    public static boolean isCorrectAnswer() {
+    public  boolean isCorrectAnswer() {
         return isCorrectAnswer;
     }
 
-    public static int getAnswer() {
+    public  Integer getAnswer() {
         return answer;
     }
 
-    public static int getCountCorrectAnswer() {
+    public int getCountCorrectAnswer() {
         return countCorrectAnswer;
     }
+
 
 
 }
