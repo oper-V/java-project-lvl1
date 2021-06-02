@@ -1,13 +1,11 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
 import hexlet.code.games.Games;
 
-public class Engine {
+public final class Engine {
 
     private  String playerName;
-    private  final int LIMIT_CORRECT_ANSWERS = 3;
+    private  static final int LIMIT_CORRECT_ANSWERS = 3;
 
 
     private  void setPlayerName() {

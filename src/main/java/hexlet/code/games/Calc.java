@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Calc implements  Games<Integer> {
+public final class Calc implements  Games<Integer> {
 
 
     private  int countCorrectAnswer;

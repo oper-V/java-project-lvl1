@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Even implements  Games<String> {
+public final class Even implements  Games<String> {
 
     private String answer;
     private String correctAnswer;
@@ -12,7 +12,7 @@ public class Even implements  Games<String> {
 
     private int countCorrectAnswer;
     private boolean isCorrectAnswer;
-    private final int MAX_NUMBER = 100;
+    private static final int MAX_NUMBER = 100;
 
     public void start() {
         printRules();
