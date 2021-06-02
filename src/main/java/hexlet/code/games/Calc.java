@@ -23,7 +23,6 @@ public final class Calc implements  Games<Integer> {
         getQuestion();
         setAnswer();
         check(firstOperand, secondOperand, operator, answer);
-        //return isCorrectAnswer;
     }
 
 
