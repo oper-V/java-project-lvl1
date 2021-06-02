@@ -3,19 +3,18 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Even {
+public class Even implements  Games<String> {
 
-    private static String answer;
-    private static String correctAnswer;
-    private static int number;
+    private String answer;
+    private String correctAnswer;
+    private int number;
 
 
+    private int countCorrectAnswer;
+    private boolean isCorrectAnswer;
+    private final int MAX_NUMBER = 100;
 
-    private static int countCorrectAnswer;
-    private static boolean isCorrectAnswer;
-    private static final int MAX_NUMBER = 100;
-
-    public static void start() {
+    public void start() {
         printRules();
         getQuestion();
         setAnswer();
@@ -23,23 +22,23 @@ public class Even {
         //return isCorrectAnswer;
     }
 
-    private static void printRules() {
+    private void printRules() {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
     }
 
-    private static void getQuestion() {
+    private void getQuestion() {
         Random rn = new Random();
         number = rn.nextInt(MAX_NUMBER);
         System.out.println("Question: " + number);
         System.out.print("Your answer: ");
     }
 
-    private static void setAnswer() {
+    private void setAnswer() {
         Scanner scanner = new Scanner(System.in);
         answer = scanner.nextLine();
     }
 
-    private static void check(int x, String inputAnswer) {
+    private void check(int x, String inputAnswer) {
         switch (inputAnswer) {
             case "yes":
                 if (x % 2 == 0) {
@@ -70,50 +69,20 @@ public class Even {
         }
     }
 
-    public static String getCorrectAnswer() {
+    public String getCorrectAnswer() {
         return correctAnswer;
     }
 
-    public static boolean isCorrectAnswer() {
+    public boolean isCorrectAnswer() {
         return isCorrectAnswer;
     }
 
-    public static String getAnswer() {
+    public String getAnswer() {
         return answer;
     }
 
-    public static int getCountCorrectAnswer() {
+    public int getCountCorrectAnswer() {
         return countCorrectAnswer;
     }
-
-
-    /*
-    private static String check(int number, String input) {
-        switch (input) {
-            case "yes":
-                if (number % 2 == 0) {
-                    countCorrectAnswer++;
-                    return "Correct!";
-                } else {
-                    isCorrectAnswer = false;
-                    return "'yes' is wrong answer ;(. Correct answer was 'no'.\n"
-                            + "Let's try again, " + App.getPlayerName();
-                }
-            case "no":
-                if (number % 2 != 0) {
-                    countCorrectAnswer++;
-                    return "Correct!";
-                } else {
-                    isCorrectAnswer = false;
-                    return "'yes' is wrong answer ;(. Correct answer was 'no'.\n"
-                            + "Let's try again, " + App.getPlayerName();
-                }
-            default:
-                isCorrectAnswer = false;
-                return "'yes' is wrong answer ;(. Correct answer was 'no'.\n"
-                        + "Let's try again, " + App.getPlayerName();
-        }
-    }
-
-     */
 }
+

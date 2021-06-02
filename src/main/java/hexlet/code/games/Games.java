@@ -1,21 +1,13 @@
 package hexlet.code.games;
 
-public interface Games {
+public interface Games<T> {
      void start();
 
-     void printRules();
-
-     void getQuestion() ;
-
-     void setAnswer() ;
-
-     void check();
-
-     String getCorrectAnswer();
+     T getCorrectAnswer();
 
      boolean isCorrectAnswer();
 
-     String getAnswer();
+     T getAnswer();
 
      int getCountCorrectAnswer();
 
