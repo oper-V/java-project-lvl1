@@ -21,7 +21,7 @@ public final class Engine {
     void greet() {
         System.out.println("Welcome to the Brain Games!");
         setPlayerName();
-        System.out.println("Hello,  " + getPlayerName());
+        System.out.println("Hello,  " + getPlayerName() + "!");
     }
 
     private void congratulations() {
