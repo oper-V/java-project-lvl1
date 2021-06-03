@@ -42,7 +42,7 @@ public final class Progression implements  Games<Integer> {
 
 
         array[0] = startNumber;
-        System.out.println("Question: ");
+        System.out.print("Question: ");
         // Заполнение массива исходной програссией
         for (int i = 0; i < currentLenght; i++) {
             if (i == 0) {
