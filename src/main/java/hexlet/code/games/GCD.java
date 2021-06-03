@@ -17,14 +17,14 @@ public final class GCD implements Games<Integer> {
 
     @Override
     public void start() {
-        printRules();
+        //printRules();
         getQuestion();
         setAnswer();
         check(firstNumber, secondNumber, answer);
 
     }
 
-    private  void printRules() {
+    public  void printRules() {
         System.out.println("Find the greatest common divisor of given numbers.");
     }
 

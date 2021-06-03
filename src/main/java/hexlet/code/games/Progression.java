@@ -22,14 +22,14 @@ public final class Progression implements  Games<Integer> {
 
     @Override
     public void start() {
-        printRules();
+        //printRules();
         getQuestion();
         setAnswer();
         check(answer);
 
     }
 
-    private  void printRules() {
+    public  void printRules() {
         System.out.println("What number is missing in the progression?");
     }
 

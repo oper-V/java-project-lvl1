@@ -19,14 +19,14 @@ public final class Calc implements  Games<Integer> {
     private  char operator;
 
     public  void start() {
-        printRules();
+        //printRules();
         getQuestion();
         setAnswer();
         check(firstOperand, secondOperand, operator, answer);
     }
 
 
-    private  void printRules() {
+    public  void printRules() {
         System.out.println("What is the result of the expression?");
     }
 

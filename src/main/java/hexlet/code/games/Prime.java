@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-public final class Even implements  Games<String> {
+public final class Prime implements  Games<String> {
 
     private String answer;
     private String correctAnswer;
@@ -14,16 +14,17 @@ public final class Even implements  Games<String> {
     private boolean isCorrectAnswer;
     private static final int MAX_NUMBER = 100;
 
+    @Override
     public void start() {
         //printRules();
         getQuestion();
         setAnswer();
         check(number, answer);
-        //return isCorrectAnswer;
+
     }
 
     public void printRules() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
 
     private void getQuestion() {
@@ -41,7 +42,7 @@ public final class Even implements  Games<String> {
     private void check(int x, String inputAnswer) {
         switch (inputAnswer) {
             case "yes":
-                if (x % 2 == 0) {
+                if(isPrime(x)) {
                     isCorrectAnswer = true;
                     countCorrectAnswer++;
                 } else {
@@ -50,7 +51,7 @@ public final class Even implements  Games<String> {
                 }
                 break;
             case "no":
-                if (x % 2 != 0) {
+                if (!isPrime(x)) {
                     isCorrectAnswer = true;
                     countCorrectAnswer++;
                 } else {
@@ -60,7 +61,7 @@ public final class Even implements  Games<String> {
                 break;
             default:
                 isCorrectAnswer = false;
-                if (x % 2 == 0) {
+                if(isPrime(x)) {
                     correctAnswer = "yes";
                 } else {
                     correctAnswer = "no";
@@ -69,20 +70,36 @@ public final class Even implements  Games<String> {
         }
     }
 
+
+
+    private  boolean isPrime(int n) {
+        if (n < 2) { return false; }
+        double s = (int) Math.sqrt(n);
+        for (int j = 2; j <= s; j++) {
+            if (n % j == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
     public String getCorrectAnswer() {
         return correctAnswer;
     }
 
+    @Override
     public boolean isCorrectAnswer() {
         return isCorrectAnswer;
     }
 
+    @Override
     public String getAnswer() {
         return answer;
     }
 
+    @Override
     public int getCountCorrectAnswer() {
         return countCorrectAnswer;
     }
 }
-
