@@ -16,7 +16,6 @@ public final class Prime implements  Games<String> {
 
     @Override
     public void start() {
-        //printRules();
         getQuestion();
         setAnswer();
         check(number, answer);
@@ -42,7 +41,7 @@ public final class Prime implements  Games<String> {
     private void check(int x, String inputAnswer) {
         switch (inputAnswer) {
             case "yes":
-                if(isPrime(x)) {
+                if (isPrime(x)) {
                     isCorrectAnswer = true;
                     countCorrectAnswer++;
                 } else {
@@ -61,7 +60,7 @@ public final class Prime implements  Games<String> {
                 break;
             default:
                 isCorrectAnswer = false;
-                if(isPrime(x)) {
+                if (isPrime(x)) {
                     correctAnswer = "yes";
                 } else {
                     correctAnswer = "no";
@@ -73,7 +72,9 @@ public final class Prime implements  Games<String> {
 
 
     private  boolean isPrime(int n) {
-        if (n < 2) { return false; }
+        if (n < 2) {
+            return false;
+        }
         double s = (int) Math.sqrt(n);
         for (int j = 2; j <= s; j++) {
             if (n % j == 0) {

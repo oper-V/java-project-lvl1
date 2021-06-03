@@ -17,7 +17,6 @@ public final class GCD implements Games<Integer> {
 
     @Override
     public void start() {
-        //printRules();
         getQuestion();
         setAnswer();
         check(firstNumber, secondNumber, answer);

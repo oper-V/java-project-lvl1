@@ -22,7 +22,6 @@ public final class Progression implements  Games<Integer> {
 
     @Override
     public void start() {
-        //printRules();
         getQuestion();
         setAnswer();
         check(answer);

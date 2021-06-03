@@ -15,11 +15,9 @@ public final class Even implements  Games<String> {
     private static final int MAX_NUMBER = 100;
 
     public void start() {
-        //printRules();
         getQuestion();
         setAnswer();
         check(number, answer);
-        //return isCorrectAnswer;
     }
 
     public void printRules() {
