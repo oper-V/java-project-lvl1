@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GCD implements  Games<Integer>{
+public final class GCD implements Games<Integer> {
 
     private  int countCorrectAnswer;
     private  boolean isCorrectAnswer;
@@ -52,14 +52,16 @@ public class GCD implements  Games<Integer>{
     }
 
     public static int solution(int a, int b) {
-        if (a == 0)
+        if (a == 0) {
             return b;
+        }
 
         while (b != 0) {
-            if (a > b)
+            if (a > b) {
                 a = a - b;
-            else
+            } else {
                 b = b - a;
+            }
         }
         return a;
     }
