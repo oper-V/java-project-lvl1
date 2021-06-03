@@ -39,7 +39,7 @@ public final class Engine {
                 System.out.println("'" + typeOfGames.getAnswer() + "'"
                         + "is wrong answer ;(. Correct answer was '"
                         + typeOfGames.getCorrectAnswer() + "'");
-                System.out.println("Let's try again, " + getPlayerName());
+                System.out.println("Let's try again, " + getPlayerName() + "!");
             }
         } while (typeOfGames.isCorrectAnswer() & typeOfGames.getCountCorrectAnswer() < LIMIT_CORRECT_ANSWERS);
 
