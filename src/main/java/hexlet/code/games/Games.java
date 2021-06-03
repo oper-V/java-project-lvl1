@@ -11,4 +11,6 @@ public interface Games<T> {
 
      int getCountCorrectAnswer();
 
+     void printRules();
+
 }

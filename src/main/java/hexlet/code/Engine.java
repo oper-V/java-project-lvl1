@@ -30,6 +30,7 @@ public final class Engine {
 
     public  void runGames(Games typeOfGames) {
         greet();
+        typeOfGames.printRules();
         do {
             typeOfGames.start();
             if (typeOfGames.isCorrectAnswer()) {
